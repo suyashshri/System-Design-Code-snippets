@@ -1,4 +1,4 @@
-class Product2 {
+class SRP_Product2 {
   public name: string;
   public price: number;
 
@@ -9,17 +9,17 @@ class Product2 {
 }
 
 class ShoppingCart2 {
-  private products: Product2[];
+  private products: SRP_Product2[];
 
   constructor() {
     this.products = [];
   }
 
-  addProduct(p: Product2): void {
+  addProduct(p: SRP_Product2): void {
     this.products.push(p);
   }
 
-  getProducts(): Product[] {
+  getProducts(): SRP_Product2[] {
     return this.products;
   }
 
@@ -39,7 +39,7 @@ class ShoppingCartPrinter {
 
   printInvoice(): void {
     console.log("Shopping Cart Invoice");
-    this.cart.getProducts().map((product: Product) => {
+    this.cart.getProducts().map((product: SRP_Product2) => {
       console.log(`${product.name} - Rs ${product.price}`);
     });
     console.log(`Total: Rs ${this.cart.calculateTotal()}`);
@@ -60,8 +60,8 @@ class ShoppingCartStorage {
 
 const new_cart = new ShoppingCart2();
 
-new_cart.addProduct(new Product2("Mobile", 70000));
-new_cart.addProduct(new Product2("Mouse", 2000));
+new_cart.addProduct(new SRP_Product2("Mobile", 70000));
+new_cart.addProduct(new SRP_Product2("Mouse", 2000));
 
 const printer = new ShoppingCartPrinter(new_cart);
 printer.printInvoice();
