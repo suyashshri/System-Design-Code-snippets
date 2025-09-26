@@ -66,3 +66,14 @@ class ShoppingCartStorage1 {
     console.log("Saving shopping cart to File...");
   }
 }
+
+const cart = new ShoppingCart1();
+
+cart.addProduct(new OCP_Product1("Laptop", 70000));
+cart.addProduct(new OCP_Product1("Mouse", 7000));
+
+const ocp_printer = new ShoppingCartPrinter1(cart);
+ocp_printer.printInvoice();
+
+const ocp_db = new ShoppingCartStorage1(cart);
+ocp_db.saveToSQLDb();
