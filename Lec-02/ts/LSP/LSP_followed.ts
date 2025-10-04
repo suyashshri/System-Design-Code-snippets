@@ -7,7 +7,7 @@ abstract class WithdrawableAccount extends DepositsOnlyAccount {
 }
 
 class SavingAccount extends WithdrawableAccount {
-  private balance: number = 0;
+  private balance: number = 10000;
 
   deposit(amount: number): void {
     this.balance += amount;
